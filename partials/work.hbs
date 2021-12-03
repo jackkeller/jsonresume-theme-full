@@ -4,7 +4,9 @@
   {{#each resume.work}}
   <section class="item">
     <header>
-      {{#if name}}
+      {{#if url}}
+      <h3 class="name"><a href="{{url}}">{{name}}</a></h3>
+      {{else}}
       <h3 class="name">{{name}}</h3>
       {{/if}}
       <div class="subhead">

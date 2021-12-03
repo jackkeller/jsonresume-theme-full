@@ -52,9 +52,21 @@
       {{#if username}}
       <span class="username">
         {{#if url}}
-        <a href="{{url}}">{{username}}</a>
+      <a href="{{url}}">@{{username}}</a>
         {{else}}
         {{username}}
+        {{/if}}
+      </span>
+      {{/if}}
+    </div>
+    <div class="profile print">
+      {{#if network}}
+      <strong class="network">{{network}}</strong>
+      {{/if}}
+      {{#if username}}
+      <span class="username">
+        {{#if url}}
+        {{url}}
         {{/if}}
       </span>
       {{/if}}

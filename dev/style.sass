@@ -101,13 +101,24 @@ section.heading
       flex-direction: row
       justify-content: start
 
+    .profile
+      &:not(.print)
+        @extend %hide-on-print
+
+      &.print
+        display: none
+
+        @media print
+          display: block
+
+
     strong
       margin: 0 .5em 0 0
 
     span
       margin: 0 1.5em 0 0
 
-// Experience items
+// Experience items (Work)
 section.experience
   .item
     @extend %avoid-break
@@ -120,7 +131,9 @@ section.experience
 
     header
       a
+        color: var(--copy-color)
         display: inline-block
+        text-decoration: none
 
       .subhead
         align-items: baseline

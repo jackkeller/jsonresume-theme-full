@@ -16,6 +16,7 @@
   --spacing: .5em;
   --spacing-double: 1em;
   --anchor-color: #2C85B1;
+  --base-font-size: 12pt;
 }
 @media screen and (min-width: 767px) {
   :root {
@@ -28,12 +29,13 @@
     --copy-color: #000000;
     --copy-color-light: #000000;
     --anchor-color: #000000;
+    --base-font-size: 9pt;
   }
 }
 
 body {
   color: var(--copy-color);
-  font: 16px "Open Sans", Helvetica, Arial, sans-serif;
+  font: var(--base-font-size) "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.4;
   margin-bottom: 100px;
   margin: 0 0;
@@ -44,7 +46,6 @@ em {
 }
 
 p {
-  line-height: 1.6;
   font-size: 90%;
 }
 
@@ -186,15 +187,15 @@ section.skills .item .keywords {
   vertical-align: top;
 }
 
-section.languages .item {
+section.languages .language-item {
   display: flex;
   justify-content: start;
 }
-section.languages .item .language {
+section.languages .language-item .language {
   font-weight: 600;
   padding-right: var(--spacing);
 }
-section.languages .item .fluency {
+section.languages .language-item .fluency {
   color: var(--copy-color-light);
   font-style: italic;
 }
@@ -214,7 +215,7 @@ section.references .item .name {
 
 section h2 {
   color: var(--accent);
-  font-size: 140%;
+  font-size: 135%;
   font-weight: 400;
   margin: 0 0 1em;
   text-transform: uppercase;
@@ -243,7 +244,7 @@ section.projects .roles {
   list-style: square;
 }
 
-section.experience .item, section.projects .item, section.education .item, section.awards .item, section.publications .item, section.interests .item, section.references .item {
+section.experience .item, section.volunteering .item, section.projects .item, section.education .item, section.awards .item, section.publications .item, section.interests .item, section.references .item {
   page-break-inside: avoid;
 }
 
@@ -261,6 +262,14 @@ section.volunteering .item header, section.projects .item header, section.educat
 @media screen and (min-width: 767px) {
   section.volunteering .item header, section.projects .item header, section.education .item header, section.awards .item header, section.publications .item .subhead {
     flex-direction: row;
+  }
+}
+
+@media print {
+  body {
+    font-size: 11pt;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -328,8 +337,8 @@ section.volunteering .item header, section.projects .item header, section.educat
         </div>
       </section>
       <section id="experience" class="experience">
-        <h2>Experience</h2>
         <section class="item">
+          <h2>Experience</h2>
           <header>
             <h3 class="name"><a href="https://example.com">Robot Company</a></h3>
             <div class="subhead">
@@ -372,8 +381,8 @@ section.volunteering .item header, section.projects .item header, section.educat
         </section>
       </section>
       <section id="skills" class="skills">
-        <h2>Skills</h2>
         <div class="item">
+          <h2>Skills</h2>
           <div class="name">Web Development</div>
           <div class="keywords">
             HTML,
@@ -383,8 +392,8 @@ section.volunteering .item header, section.projects .item header, section.educat
         </div>
       </section>
       <section id="volunteering" class="volunteering">
-        <h2>Volunteering</h2>
         <div class="item">
+          <h2>Volunteering</h2>
           <header>
               <h3 class="name">Organization</h3>
           </header>
@@ -398,8 +407,8 @@ section.volunteering .item header, section.projects .item header, section.educat
         </div>
       </section>
       <section id="projects" class="projects">
-        <h2>Projects</h2>
         <section class="item">
+          <h2>Projects</h2>
           <header>
             <h3 class="name">Project</h3>
             <small class="subhead">Dec 2018
@@ -419,8 +428,8 @@ section.volunteering .item header, section.projects .item header, section.educat
         </section>
       </section>
       <section id="education" class="education">
-        <h2>Education</h2>
         <div class="item">
+          <h2>Education</h2>
           <header>
               <h3 class="name">University</h3>
           </header>
@@ -435,8 +444,8 @@ section.volunteering .item header, section.projects .item header, section.educat
         </div>
       </section>
       <section id="awards" class="awards">
-        <h2>Awards</h2>
         <div class="item">
+          <h2>Awards</h2>
           <header>
             <div class="title">Award</div>
             <small class="date">Oct 2014</small>
@@ -446,8 +455,8 @@ section.volunteering .item header, section.projects .item header, section.educat
         </div>
       </section>
       <section id="publications" class="publications">
-        <h2>Publications</h2>
         <div class="item">
+          <h2>Publications</h2>
           <div class="name">Publication</div>
           <div class="subhead">
       
@@ -459,19 +468,23 @@ section.volunteering .item header, section.projects .item header, section.educat
         </div>
       </section>
       <section id="languages" class="languages">
-        <h2>Languages</h2>
         <div class="item">
-          <span class="language">English:</span>
-          <span class="fluency">Native speaker</span>
+          <h2>Languages</h2>
+          <div class="language-item">
+            <span class="language">English:</span>
+            <span class="fluency">Native speaker</span>
+          </div>
         </div>
         <div class="item">
-          <span class="language">Pig Latin:</span>
-          <span class="fluency">Professional working proficiency</span>
+          <div class="language-item">
+            <span class="language">Pig Latin:</span>
+            <span class="fluency">Professional working proficiency</span>
+          </div>
         </div>
       </section>
       <section id="interests" class="interests">
-        <h2>Interests</h2>
         <div class="item">
+          <h2>Interests</h2>
           <span class="name">Wildlife:</span>
           <span class="keywords">
             <span>Ferrets</span>,
@@ -488,8 +501,8 @@ section.volunteering .item header, section.projects .item header, section.educat
         </div>
       </section>
       <section id="references" class="references">
-        <h2>References</h2>
         <div class="item">
+          <h2>References</h2>
           <blockquote class="reference">Reference…</blockquote>
           <div class="name">— Jane Doe</div>
         </div>

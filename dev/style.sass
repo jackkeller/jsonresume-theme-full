@@ -8,8 +8,7 @@ $full: '(min-width: 767px)'
 // Begin Stylesheet
 \:root
   --blue:#2C85B1
-  // --accent:#BC1B39
-  --accent:#d8780b
+  --accent:#BC1B39
   --white:#FFFFFF
   --grey:#999999
   --light-grey:#ededed
@@ -18,6 +17,7 @@ $full: '(min-width: 767px)'
   --spacing: .5em
   --spacing-double: 1em
   --anchor-color: #2C85B1
+  --base-font-size: 12pt
 
   +fullsize
     --spacing: .75em
@@ -27,10 +27,11 @@ $full: '(min-width: 767px)'
     --copy-color: #000000
     --copy-color-light: #000000
     --anchor-color: #000000
+    --base-font-size: 9pt
 
 body
   color: var(--copy-color)
-  font: 16px 'Open Sans', Helvetica, Arial, sans-serif
+  font: var(--base-font-size) 'Open Sans', Helvetica, Arial, sans-serif
   line-height: 1.4
   margin-bottom: 100px
   margin: 0 0
@@ -39,7 +40,6 @@ em
   color: var(--grey)
 
 p
-  line-height: 1.6
   font-size: 90%
 
 a
@@ -59,7 +59,7 @@ blockquote
 
 #resume
   background: var(--white)
-  margin: var(--spacing) var(--spacing) var(--spacing) var(--spacing-double)
+  margin: var(--spacing) var(--spacing-double)
   max-width: 760px
 
 // Basics (name, picture, contact info)
@@ -188,6 +188,8 @@ section.skills
 // Volunteering
 section.volunteering
   .item
+    @extend %avoid-break
+
     header
       @extend %flexible-heading
 
@@ -236,7 +238,7 @@ section.publications
 
 // Languages
 section.languages
-  .item
+  .language-item
     display: flex
     justify-content: start
 
@@ -273,7 +275,7 @@ section.references
 section
   h2
     color: var(--accent)
-    font-size: 140%
+    font-size: 135%
     font-weight: 400
     margin: 0 0 1em
     text-transform: uppercase
@@ -314,3 +316,10 @@ section
 
   +fullsize
     flex-direction: row
+
+// Print Styles
+@media print
+  body
+    font-size: 11pt
+    margin: 0
+    padding: 0

@@ -42,6 +42,8 @@ If you want to change the accent color add this to the top of your `resume.json`
 
 Then run `resume serve --theme full` in your resume repository and get to editing the `resume.json` file with your details, easy peesy.
 
+Format dates without preceding zeros for the date formatter to work properly `2020-02-03` will not work but `2020-2-3` will. I'll work that out later hopefully.
+
 > _As far as exporting a PDF version, `@page` rules are not always respected in terms of margins, I recommend initiating a print of the HTML page and then using the option to save as a PDF if you have multiple pages._
 
 

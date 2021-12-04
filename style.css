@@ -139,11 +139,9 @@ section.experience .item header h3 {
   font-weight: 400;
   text-decoration: none;
 }
-section.experience .item header .subhead {
-  flex-direction: column;
-}
 @media screen and (max-width: 566px) {
   section.experience .item header .subhead {
+    flex-direction: column;
     margin-bottom: var(--spacing-double);
   }
 }
@@ -191,6 +189,9 @@ section.skills .item .keywords {
   vertical-align: top;
 }
 
+section.volunteering .item .position {
+  font-weight: 600;
+}
 section.volunteering .item header .subhead {
   margin-top: var(--spacing);
 }
@@ -204,6 +205,12 @@ section.projects .highlights,
 section.projects .keywords,
 section.projects .roles {
   margin: var(--spacing-small) 0 var(--spacing);
+}
+section.awards .item .title {
+  font-weight: 600;
+}
+section.publications .item .name {
+  font-weight: 600;
 }
 section.languages .language-item {
   display: flex;

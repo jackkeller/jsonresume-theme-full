@@ -1,8 +1,10 @@
 {{#if resume.publications.length}}
 <section id="publications" class="publications">
-  <h2>Publications</h2>
   {{#each resume.publications}}
   <div class="item">
+    {{#if @first}}
+    <h2>Publications</h2>
+    {{/if}}
     {{#if name}}
     <div class="name">{{name}}</div>
     {{/if}}

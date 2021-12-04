@@ -1,8 +1,10 @@
 {{#if resume.volunteer.length}}
 <section id="volunteering" class="volunteering">
-  <h2>Volunteering</h2>
   {{#each resume.volunteer}}
   <div class="item">
+    {{#if @first}}
+    <h2>Volunteering</h2>
+    {{/if}}
     <header>
       {{#if organization}}
         <h3 class="name">{{organization}}</h3>

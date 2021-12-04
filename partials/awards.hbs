@@ -1,8 +1,10 @@
 {{#if resume.awards.length}}
 <section id="awards" class="awards">
-  <h2>Awards</h2>
   {{#each resume.awards}}
   <div class="item">
+    {{#if @first}}
+    <h2>Awards</h2>
+    {{/if}}
     <header>
       {{#if title}}
       <div class="title">{{title}}</div>

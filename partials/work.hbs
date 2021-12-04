@@ -1,8 +1,10 @@
 {{#if resume.work.length}}
 <section id="experience" class="experience">
-  <h2>Experience</h2>
   {{#each resume.work}}
   <section class="item">
+    {{#if @first}}
+    <h2>Experience</h2>
+    {{/if}}
     <header>
       {{#if url}}
       <h3 class="name"><a href="{{url}}">{{name}}</a></h3>

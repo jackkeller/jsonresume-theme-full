@@ -69,7 +69,7 @@ blockquote {
 section.heading header h1 {
   font-size: 180%;
   margin: 0;
-  font-weight: 600;
+  font-weight: 300;
 }
 section.heading header h2 {
   font-size: 140%;
@@ -90,9 +90,6 @@ section.heading header .contact {
     flex-direction: row;
   }
 }
-section.heading header .contact-detail {
-  margin: 0 1em 0 0;
-}
 section.heading header address {
   font-style: normal;
   font-size: 90%;
@@ -101,12 +98,20 @@ section.heading header address {
 section.heading .profiles {
   display: flex;
   flex-direction: column;
-  margin: 0 1em 0 0;
+  padding-bottom: var(--spacing);
 }
 @media screen and (min-width: 767px) {
   section.heading .profiles {
     flex-direction: row;
     justify-content: start;
+  }
+}
+section.heading .profiles .profile.print {
+  display: none;
+}
+@media print {
+  section.heading .profiles .profile.print {
+    display: block;
   }
 }
 section.heading .profiles strong {
@@ -124,8 +129,12 @@ section.experience .item {
 section.experience .item:last-child {
   border-bottom: none;
 }
-section.experience .item header a {
+section.experience .item header a,
+section.experience .item header h3 {
+  color: var(--copy-color);
   display: inline-block;
+  text-decoration: none;
+  font-weight: 400;
 }
 section.experience .item header .subhead {
   align-items: baseline;
@@ -206,8 +215,8 @@ section h2 {
 }
 section h2::after {
   content: "";
-  width: 50px;
-  height: 3px;
+  width: var(--spacing-double);
+  height: 0.13em;
   background: var(--accent);
   display: inline-block;
   position: absolute;
@@ -215,8 +224,7 @@ section h2::after {
   bottom: -10px;
 }
 section header h3 {
-  margin: 0.2em 1em 0.2em 0;
-  display: inline-block;
+  margin: 0;
   font-weight: 600;
 }
 
@@ -233,7 +241,7 @@ section.experience .item, section.projects .item, section.education .item, secti
 }
 
 @media print {
-  section.publications .item .website {
+  section.heading .profiles .profile:not(.print), section.publications .item .website {
     display: none;
   }
 }
@@ -248,5 +256,3 @@ section.volunteering .item header, section.projects .item header, section.educat
     flex-direction: row;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

@@ -76,7 +76,7 @@ blockquote {
 section.heading header h1 {
   font-size: 180%;
   margin: 0;
-  font-weight: 600;
+  font-weight: 300;
 }
 section.heading header h2 {
   font-size: 140%;
@@ -97,9 +97,6 @@ section.heading header .contact {
     flex-direction: row;
   }
 }
-section.heading header .contact-detail {
-  margin: 0 1em 0 0;
-}
 section.heading header address {
   font-style: normal;
   font-size: 90%;
@@ -108,12 +105,20 @@ section.heading header address {
 section.heading .profiles {
   display: flex;
   flex-direction: column;
-  margin: 0 1em 0 0;
+  padding-bottom: var(--spacing);
 }
 @media screen and (min-width: 767px) {
   section.heading .profiles {
     flex-direction: row;
     justify-content: start;
+  }
+}
+section.heading .profiles .profile.print {
+  display: none;
+}
+@media print {
+  section.heading .profiles .profile.print {
+    display: block;
   }
 }
 section.heading .profiles strong {
@@ -131,8 +136,12 @@ section.experience .item {
 section.experience .item:last-child {
   border-bottom: none;
 }
-section.experience .item header a {
+section.experience .item header a,
+section.experience .item header h3 {
+  color: var(--copy-color);
   display: inline-block;
+  text-decoration: none;
+  font-weight: 400;
 }
 section.experience .item header .subhead {
   align-items: baseline;
@@ -213,8 +222,8 @@ section h2 {
 }
 section h2::after {
   content: "";
-  width: 50px;
-  height: 3px;
+  width: var(--spacing-double);
+  height: 0.13em;
   background: var(--accent);
   display: inline-block;
   position: absolute;
@@ -222,8 +231,7 @@ section h2::after {
   bottom: -10px;
 }
 section header h3 {
-  margin: 0.2em 1em 0.2em 0;
-  display: inline-block;
+  margin: 0;
   font-weight: 600;
 }
 
@@ -240,7 +248,7 @@ section.experience .item, section.projects .item, section.education .item, secti
 }
 
 @media print {
-  section.publications .item .website {
+  section.heading .profiles .profile:not(.print), section.publications .item .website {
     display: none;
   }
 }
@@ -255,8 +263,6 @@ section.volunteering .item header, section.projects .item header, section.educat
     flex-direction: row;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
 
 	</style>
 	<style media="print">
@@ -328,13 +334,14 @@ section.volunteering .item header, section.projects .item header, section.educat
             <h3 class="name"><a href="https://example.com">Robot Company</a></h3>
             <div class="subhead">
             <span class="position">Robitic Landlord</span>
-            <small class="dates">Dec 2012
-             - Dec 2013</small>
+            <small class="dates">Dec 2011
+             - Dec 2020</small>
             </div>
           </header>
-          <div class="summary"><p>Description…</p></div>
+          <div class="summary"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque necessitatibus quo placeat architecto iste totam vitae amet aliquam vero aperiam, omnis tempora libero nobis in incidunt fugit deleniti saepe fugiat.</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque necessitatibus quo placeat architecto iste totam vitae amet aliquam vero aperiam, omnis tempora libero nobis in incidunt fugit deleniti saepe fugiat.</p></div>
           <ul class="highlights">
             <li>Started the company</li>
+            <li>Beep Boop</li>
           </ul>
         </section>
         <section class="item">
@@ -346,11 +353,11 @@ section.volunteering .item header, section.projects .item header, section.educat
              - Dec 2013</small>
             </div>
           </header>
-          <div class="summary"><p>Description…</p></div>
+          <div class="summary"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque necessitatibus quo placeat architecto iste totam vitae amet aliquam vero aperiam, omnis tempora libero nobis in incidunt fugit deleniti saepe fugiat.</p></div>
         </section>
         <section class="item">
           <header>
-            <h3 class="name"><a href="https://example.com">Life</a></h3>
+            <h3 class="name">Tiny Child</h3>
             <div class="subhead">
             <span class="position">Human</span>
             <small class="dates">Dec 1900
@@ -360,8 +367,7 @@ section.volunteering .item header, section.projects .item header, section.educat
           <div class="summary"><p>It's my life!</p></div>
           <ul class="highlights">
             <li>born</li>
-            <li>died</li>
-            <li>lived to be 120 yo!</li>
+            <li>cried</li>
           </ul>
         </section>
       </section>

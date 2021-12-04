@@ -129,10 +129,12 @@ section.experience .item {
 section.experience .item:last-child {
   border-bottom: none;
 }
-section.experience .item header a {
+section.experience .item header a,
+section.experience .item header h3 {
   color: var(--copy-color);
   display: inline-block;
   text-decoration: none;
+  font-weight: 400;
 }
 section.experience .item header .subhead {
   align-items: baseline;

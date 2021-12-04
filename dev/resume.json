@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "accent": "#BC1B39"
+  },
+  "basics": {
+    "name": "John Doe",
+    "label": "Programmer",
+    "image": "",
+    "email": "john@gmail.com",
+    "phone": "(912) 555-4321",
+    "url": "https://johndoe.com",
+    "summary": "A summary of John Doe…",
+    "location": {
+      "address": "2712 Broadway St.",
+      "postalCode": "90210",
+      "city": "San Francisco",
+      "countryCode": "US",
+      "region": "CA"
+    },
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "john",
+        "url": "https://twitter.com/john"
+      },
+      {
+        "network": "GitHub",
+        "username": "john",
+        "url": "https://github.com/john"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Robot Company",
+      "position": "Robitic Landlord",
+      "url": "https://example.com",
+      "startDate": "2012-01-01",
+      "endDate": "2021-01-01",
+      "summary": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque necessitatibus quo placeat architecto iste totam vitae amet aliquam vero aperiam, omnis tempora libero nobis in incidunt fugit deleniti saepe fugiat.\nLorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque necessitatibus quo placeat architecto iste totam vitae amet aliquam vero aperiam, omnis tempora libero nobis in incidunt fugit deleniti saepe fugiat.",
+      "highlights": ["Started the company", "Beep Boop"]
+    },
+    {
+      "name": "Company",
+      "position": "Software Engineer",
+      "url": "https://company.com",
+      "startDate": "2014-01-01",
+      "endDate": "2014-01-01",
+      "summary": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque necessitatibus quo placeat architecto iste totam vitae amet aliquam vero aperiam, omnis tempora libero nobis in incidunt fugit deleniti saepe fugiat.",
+      "highlights": []
+    },
+    {
+      "name": "Tiny Child",
+      "position": "Human",
+      "url": "",
+      "startDate": "1901-01-01",
+      "endDate": "2021-01-01",
+      "summary": "It's my life!",
+      "highlights": ["born", "cried"]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "https://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": ["Awarded 'Volunteer of the Month'"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University",
+      "url": "https://institution.com/",
+      "area": "Software Development",
+      "studyType": "Bachelor",
+      "startDate": "2011-01-01",
+      "endDate": "2013-01-01",
+      "score": "4.0",
+      "courses": ["DB1101 - Basic SQL"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Web Development",
+      "level": "Master",
+      "keywords": ["HTML", "CSS", "JavaScript"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "Pig Latin",
+      "fluency": "Professional working proficiency"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": ["Ferrets", "Unicorns"]
+    },
+    {
+      "name": "Travel",
+      "keywords": ["Skiing", "Hiking", "Rest Stops"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Project",
+      "description": "Description…",
+      "highlights": ["Won award at AIHacks 2016"],
+      "keywords": ["HTML"],
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "url": "https://project.com/",
+      "roles": ["Team Lead"],
+      "entity": "Entity",
+      "type": "application"
+    }
+  ]
+}

@@ -12,7 +12,7 @@
   --spacing-small: .1rem;
   --spacing: .5rem;
 }
-@media screen and (min-width: 567px) {
+@media (min-width: 567px) {
   :root {
     --spacing-double: 1.5rem;
     --spacing-small: .25rem;
@@ -87,7 +87,7 @@ section.heading header .contact {
   flex-direction: column;
   padding-bottom: var(--spacing);
 }
-@media screen and (min-width: 567px) {
+@media (min-width: 567px) {
   section.heading header .contact {
     flex-direction: row;
     justify-content: space-between;
@@ -103,7 +103,7 @@ section.heading .profiles {
   flex-direction: column;
   padding-bottom: var(--spacing);
 }
-@media screen and (min-width: 567px) {
+@media (min-width: 567px) {
   section.heading .profiles {
     flex-direction: row;
     justify-content: start;
@@ -139,7 +139,7 @@ section.experience .item header h3 {
   font-weight: 400;
   text-decoration: none;
 }
-@media screen and (max-width: 566px) {
+@media (max-width: 566px) {
   section.experience .item header .subhead {
     flex-direction: column;
     margin-bottom: var(--spacing-double);
@@ -201,11 +201,6 @@ section.projects .item strong {
   display: inline-block;
   padding-top: var(--spacing);
 }
-section.projects .highlights,
-section.projects .keywords,
-section.projects .roles {
-  margin: var(--spacing-small) 0 var(--spacing);
-}
 section.awards .item .title {
   font-weight: 600;
 }
@@ -213,26 +208,50 @@ section.publications .item .name {
   font-weight: 600;
 }
 section.languages .language-item {
+  align-items: baseline;
   display: flex;
   justify-content: start;
 }
+section.languages .language-item:first-child {
+  margin-top: var(--spacing);
+}
+section.languages .language-item:last-child {
+  margin-bottom: var(--spacing);
+}
 section.languages .language-item .language {
+  display: inline-block;
+  font-size: 90%;
   font-weight: 600;
-  padding-right: var(--spacing);
+  margin: 0 var(--spacing) 0 0;
+  text-transform: uppercase;
+  vertical-align: top;
+  white-space: nowrap;
 }
 section.languages .language-item .fluency {
   color: var(--copy-color-light);
   font-style: italic;
 }
 
+section.interests .item {
+  margin-bottom: var(--spacing);
+}
+section.interests .item:last-child {
+  margin-bottom: var(--spacing);
+}
 section.interests .item .name {
+  display: inline-block;
+  font-size: 90%;
   font-weight: 600;
-  padding-right: var(--spacing);
+  margin: 0 var(--spacing) 0 0;
+  text-transform: uppercase;
+  vertical-align: top;
+  white-space: nowrap;
 }
 
 section.references .item blockquote {
   font-style: italic;
   margin-bottom: 0;
+  margin-left: var(--spacing);
 }
 section.references .item .name {
   color: var(--copy-color-light);
@@ -263,10 +282,12 @@ section header h3 {
 
 section.experience .item .highlights, section.volunteering .highlights, section.projects .highlights,
 section.projects .keywords,
-section.projects .roles {
+section.projects .roles, section.education .item .courses {
   font-size: 90%;
   line-height: 1.3;
   list-style: square;
+  margin: var(--spacing-small) 0 var(--spacing);
+  padding-left: var(--spacing-double);
 }
 
 section.experience .item, section.volunteering .item, section.projects .item, section.education .item, section.awards .item, section.publications .item, section.interests .item, section.references .item {
@@ -284,7 +305,7 @@ section.experience .item header .subhead, section.volunteering .item header .sub
   display: flex;
   justify-content: space-between;
 }
-@media screen and (min-width: 567px) {
+@media (min-width: 567px) {
   section.experience .item header .subhead, section.volunteering .item header .subhead, section.projects .item header, section.education .item header, section.awards .item header, section.publications .item .subhead {
     flex-direction: row;
   }

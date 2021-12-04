@@ -9,26 +9,38 @@
       {{#if institution}}
         <h3 class="name">{{institution}}</h3>
       {{/if}}
+      <small class="dates">
+        {{#if startDate}}
+        <span class="startDate">{{date startDate}}</span>
+        {{/if}}
+        {{#if endDate}}
+        <span class="endDate"> - {{date endDate}}</span>
+        {{else}}
+        <span class="endDate"> - Present</span>
+        {{/if}}
+      </small>
     </header>
-    <small class="dates">
-      {{#if startDate}}
-      <span class="startDate">{{date startDate}}</span>
-      {{/if}}
-      {{#if endDate}}
-      <span class="endDate"> - {{date endDate}}</span>
-      {{else}}
-      <span class="endDate"> - Present</span>
-      {{/if}}
-    </small>
     <div class="qualification">
       {{#if studyType}}
       <span class="studyType">{{studyType}}</span>
       {{/if}}
       {{#if area}}
-      <span class="area"> - {{area}}</span>
+      <span class="area">{{area}}</span>
       {{/if}}
       {{#if gpa}}
       <span class="gpa">GPA: {{gpa}}</span>
+      {{/if}}
+      {{#if score}}
+      <span class="gpa">GPA: {{score}}</span>
+      {{/if}}
+      {{#if courses.length}}
+      <br>
+      <strong>Courses</strong>
+      <ul class="courses">
+        {{#each courses}}
+        <li>{{.}}</li>
+        {{/each}}
+      </ul>
       {{/if}}
     </div>
   </div>

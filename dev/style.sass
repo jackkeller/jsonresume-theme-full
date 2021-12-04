@@ -3,11 +3,11 @@ $small: '(max-width: 566px)'
 $full: '(min-width: 567px)'
 
 =smallsize
-  @media screen and #{$small}
+  @media  #{$small}
     @content
  
 =fullsize
-  @media screen and #{$full}
+  @media #{$full}
     @content
   
 // Begin Stylesheet
@@ -234,7 +234,6 @@ section.projects
   .keywords,
   .roles
     @extend %unordered-list
-    margin: var(--spacing-small) 0 var(--spacing)
 
   .item header
     @extend %flexible-heading
@@ -246,6 +245,9 @@ section.education
   
     header
       @extend %flexible-heading
+
+    .courses
+      @extend %unordered-list
   
 // Awards
 section.awards
@@ -275,12 +277,24 @@ section.publications
 // Languages
 section.languages
   .language-item
+    align-items: baseline
     display: flex
     justify-content: start
 
+    &:first-child
+      margin-top: var(--spacing)
+
+    &:last-child
+      margin-bottom: var(--spacing)
+
     .language
+      display: inline-block
+      font-size: 90%
       font-weight: 600
-      padding-right: var(--spacing)
+      margin: 0 var(--spacing) 0 0
+      text-transform: uppercase
+      vertical-align: top
+      white-space: nowrap
 
     .fluency
       color: var(--copy-color-light)
@@ -290,10 +304,19 @@ section.languages
 section.interests
   .item
     @extend %avoid-break
+    margin-bottom: var(--spacing)
+
+    &:last-child
+      margin-bottom: var(--spacing)
 
     .name
+      display: inline-block
+      font-size: 90%
       font-weight: 600
-      padding-right: var(--spacing)
+      margin: 0 var(--spacing) 0 0
+      text-transform: uppercase
+      vertical-align: top
+      white-space: nowrap
 
 // References
 section.references
@@ -302,7 +325,9 @@ section.references
 
     blockquote
       font-style: italic
-      margin-bottom: 0
+      margin:
+        bottom: 0
+        left: var(--spacing)
     
     .name
       color: var(--copy-color-light)
@@ -322,7 +347,6 @@ section
       bottom: -10px
       content: ' '
       display: inline-block
-      // font-size: 
       height: 3px
       left: 0
       position: absolute
@@ -338,6 +362,8 @@ section
   font-size: 90%
   line-height: 1.3
   list-style: square
+  margin: var(--spacing-small) 0 var(--spacing)
+  padding-left: var(--spacing-double)
 
 %avoid-break
   page-break-inside: avoid

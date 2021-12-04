@@ -3,42 +3,45 @@
 	<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-	<title>John Doe  - Programmer</title>
+	<title>John Doe  - Director of Engineering</title>
 	<style>
   	:root {
+  --accent:#BC1B39;
+  --anchor-color: #2C85B1;
   --blue:#2C85B1;
-  --accent:#d8780b;
-  --white:#FFFFFF;
+  --copy-color-light: #666666;
+  --copy-color: #242424;
   --grey:#999999;
   --light-grey:#ededed;
-  --copy-color: #242424;
-  --copy-color-light: #666666;
-  --spacing: .5em;
-  --spacing-double: 1em;
-  --anchor-color: #2C85B1;
+  --white:#FFFFFF;
   --base-font-size: 12pt;
+  --spacing-double: 1rem;
+  --spacing-small: .1rem;
+  --spacing: .5rem;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 567px) {
   :root {
-    --spacing: .75em;
-    --spacing-double: 1.5em;
+    --spacing-double: 1.5rem;
+    --spacing-small: .25rem;
+    --spacing: .75rem;
   }
 }
 @media print {
   :root {
-    --copy-color: #000000;
-    --copy-color-light: #000000;
     --anchor-color: #000000;
     --base-font-size: 9pt;
+    --copy-color-light: #000000;
+    --copy-color: #000000;
   }
 }
 
 body {
   color: var(--copy-color);
+  display: flex;
   font: var(--base-font-size) "Open Sans", Helvetica, Arial, sans-serif;
-  line-height: 1.4;
-  margin-bottom: 100px;
-  margin: 0 0;
+  justify-content: center;
+  line-height: 1.25;
+  -webkit-print-color-adjust: exact;
 }
 
 em {
@@ -51,8 +54,8 @@ p {
 
 a {
   color: var(--anchor-color);
-  text-decoration: none;
   font-weight: 400;
+  text-decoration: none;
 }
 
 ul {
@@ -60,29 +63,28 @@ ul {
 }
 
 section {
-  margin: 1em 0 2em;
+  margin: var(--spacing) 0 var(--spacing-double);
 }
 
 blockquote {
-  margin: 0;
-  margin-bottom: 1em;
+  margin-bottom: 0 0 var(--spacing);
 }
 
 #resume {
   background: var(--white);
-  margin: var(--spacing) var(--spacing) var(--spacing) var(--spacing-double);
+  margin: var(--spacing) var(--spacing-double);
   max-width: 760px;
 }
 
 section.heading header h1 {
   font-size: 180%;
-  margin: 0;
   font-weight: 300;
+  margin: 0;
 }
 section.heading header h2 {
   font-size: 140%;
-  margin: 0;
   font-weight: 400;
+  margin: 0;
 }
 section.heading header h2::after {
   display: none;
@@ -92,15 +94,15 @@ section.heading header .contact {
   flex-direction: column;
   padding-bottom: var(--spacing);
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 567px) {
   section.heading header .contact {
-    justify-content: space-between;
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 section.heading header address {
-  font-style: normal;
   font-size: 90%;
+  font-style: normal;
   padding-bottom: var(--spacing);
 }
 section.heading .profiles {
@@ -108,7 +110,7 @@ section.heading .profiles {
   flex-direction: column;
   padding-bottom: var(--spacing);
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 567px) {
   section.heading .profiles {
     flex-direction: row;
     justify-content: start;
@@ -123,10 +125,10 @@ section.heading .profiles .profile.print {
   }
 }
 section.heading .profiles strong {
-  margin: 0 0.5em 0 0;
+  margin: 0 var(--spacing-small) 0 0;
 }
 section.heading .profiles span {
-  margin: 0 1.5em 0 0;
+  margin: 0 var(--spacing-double) 0 0;
 }
 
 section.experience .item {
@@ -141,52 +143,75 @@ section.experience .item header a,
 section.experience .item header h3 {
   color: var(--copy-color);
   display: inline-block;
-  text-decoration: none;
   font-weight: 400;
+  text-decoration: none;
 }
 section.experience .item header .subhead {
-  align-items: baseline;
-  display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+@media screen and (max-width: 566px) {
+  section.experience .item header .subhead {
+    margin-bottom: var(--spacing-double);
+  }
 }
 section.experience .item .summary p {
-  margin-top: 0.5em;
+  margin-top: var(--spacing);
 }
 section.experience .item .summary p:first-child {
-  margin-top: 0.25em;
+  margin-top: var(--spacing-small);
 }
 section.experience .item .summary p:last-child {
-  margin-bottom: 0.25em;
+  margin-bottom: var(--spacing-small);
 }
 section.experience .item .position {
   color: var(--copy-color-light);
   font-size: 100%;
   font-weight: 500;
-  margin: 0.2em 1em 0.2em 0;
+  margin: var(--spacing-small) 0;
 }
 section.experience .item .startDate,
 section.experience .item .endDate {
   color: var(--grey);
 }
 section.skills .item {
-  margin: 0.5em 0;
-  padding: 0 0 0.5em;
-  font-size: 90%;
+  margin: 0;
+  padding: 0 0 var(--spacing);
+}
+section.skills .item:first-child {
+  margin-top: var(--spacing);
+}
+section.skills .item:last-child {
+  margin-bottom: var(--spacing);
 }
 section.skills .item .name {
-  font-weight: 600;
   display: inline-block;
+  font-size: 90%;
+  font-weight: 600;
+  margin: 0 var(--spacing) 0 0;
   text-transform: uppercase;
-  margin: 0 1em 0 0;
-  width: 23%;
   vertical-align: top;
+  white-space: nowrap;
 }
 section.skills .item .keywords {
   display: inline-block;
-  width: 70%;
+  font-size: 90%;
   vertical-align: top;
 }
 
+section.volunteering .item header .subhead {
+  margin-top: var(--spacing);
+}
+section.projects .item strong {
+  color: var(--copy-color-light);
+  font-weight: 600;
+  display: inline-block;
+  padding-top: var(--spacing);
+}
+section.projects .highlights,
+section.projects .keywords,
+section.projects .roles {
+  margin: var(--spacing-small) 0 var(--spacing);
+}
 section.languages .language-item {
   display: flex;
   justify-content: start;
@@ -217,19 +242,19 @@ section h2 {
   color: var(--accent);
   font-size: 135%;
   font-weight: 400;
-  margin: 0 0 1em;
-  text-transform: uppercase;
+  margin: 0 0 var(--spacing-double);
   position: relative;
+  text-transform: uppercase;
 }
 section h2::after {
-  content: "";
-  width: var(--spacing-double);
-  height: 0.13em;
   background: var(--accent);
-  display: inline-block;
-  position: absolute;
-  left: 0;
   bottom: -10px;
+  content: " ";
+  display: inline-block;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 2.5rem;
 }
 section header h3 {
   margin: 0;
@@ -254,13 +279,13 @@ section.experience .item, section.volunteering .item, section.projects .item, se
   }
 }
 
-section.volunteering .item header, section.projects .item header, section.education .item header, section.awards .item header, section.publications .item .subhead {
+section.experience .item header .subhead, section.volunteering .item header .subhead, section.projects .item header, section.education .item header, section.awards .item header, section.publications .item .subhead {
   align-items: baseline;
   display: flex;
   justify-content: space-between;
 }
-@media screen and (min-width: 767px) {
-  section.volunteering .item header, section.projects .item header, section.education .item header, section.awards .item header, section.publications .item .subhead {
+@media screen and (min-width: 567px) {
+  section.experience .item header .subhead, section.volunteering .item header .subhead, section.projects .item header, section.education .item header, section.awards .item header, section.publications .item .subhead {
     flex-direction: row;
   }
 }
@@ -293,12 +318,12 @@ section.volunteering .item header, section.projects .item header, section.educat
           <h1>
             John Doe
           </h1>
-          <h2>Programmer</h2>
+          <h2>Director of Engineering</h2>
           <div class="summary"><p>A summary of John Doe…</p></div>
           <div class="contact">
             <span class="contact-detail"><a href="mailto:john@gmail.com">john@gmail.com</a></span>
             <span class="contact-detail">(912) 555-4321</span>
-            <span class="contact-detail"><a href="https://johndoe.com">https://johndoe.com</a></span>
+            <span class="contact-detail"><a href="https://johndoe.com" target="external">https://johndoe.com</a></span>
           </div>
           <address>
             <span class="address-detail">2712 Broadway St.</span>
@@ -313,11 +338,10 @@ section.volunteering .item header, section.projects .item header, section.educat
           <div class="profile">
             <strong class="network">Twitter</strong>
             <span class="username">
-            <a href="https://twitter.com/john">@john</a>
+              <a href="https://twitter.com/john" target="external">@john</a>
             </span>
           </div>
           <div class="profile print">
-            <strong class="network">Twitter</strong>
             <span class="username">
               https://twitter.com/john
             </span>
@@ -325,11 +349,10 @@ section.volunteering .item header, section.projects .item header, section.educat
           <div class="profile">
             <strong class="network">GitHub</strong>
             <span class="username">
-            <a href="https://github.com/john">@john</a>
+              <a href="https://github.com/john" target="external">@john</a>
             </span>
           </div>
           <div class="profile print">
-            <strong class="network">GitHub</strong>
             <span class="username">
               https://github.com/john
             </span>
@@ -340,26 +363,27 @@ section.volunteering .item header, section.projects .item header, section.educat
         <section class="item">
           <h2>Experience</h2>
           <header>
-            <h3 class="name"><a href="https://example.com">Robot Company</a></h3>
+            <h3 class="name"><a href="https://example.com" target="external">Robot Company</a></h3>
             <div class="subhead">
-            <span class="position">Robitic Landlord</span>
-            <small class="dates">Dec 2011
-             - Dec 2020</small>
+            <span class="position">Robotic Landlord</span>
+            <small class="dates">Jan 2012
+             - Mar 2021</small>
             </div>
           </header>
           <div class="summary"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque necessitatibus quo placeat architecto iste totam vitae amet aliquam vero aperiam, omnis tempora libero nobis in incidunt fugit deleniti saepe fugiat.</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque necessitatibus quo placeat architecto iste totam vitae amet aliquam vero aperiam, omnis tempora libero nobis in incidunt fugit deleniti saepe fugiat.</p></div>
           <ul class="highlights">
             <li>Started the company</li>
+            <li>Experimental Surgery</li>
             <li>Beep Boop</li>
           </ul>
         </section>
         <section class="item">
           <header>
-            <h3 class="name"><a href="https://company.com">Company</a></h3>
+            <h3 class="name"><a href="https://company.com" target="external">Company</a></h3>
             <div class="subhead">
             <span class="position">Software Engineer</span>
-            <small class="dates">Dec 2013
-             - Dec 2013</small>
+            <small class="dates">Jan 2014
+             - Jan 2014</small>
             </div>
           </header>
           <div class="summary"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque necessitatibus quo placeat architecto iste totam vitae amet aliquam vero aperiam, omnis tempora libero nobis in incidunt fugit deleniti saepe fugiat.</p></div>
@@ -369,25 +393,34 @@ section.volunteering .item header, section.projects .item header, section.educat
             <h3 class="name">Tiny Child</h3>
             <div class="subhead">
             <span class="position">Human</span>
-            <small class="dates">Dec 1900
-             - Dec 2020</small>
+            <small class="dates">Feb 1977
+             - Present</small>
             </div>
           </header>
-          <div class="summary"><p>It's my life!</p></div>
+          <div class="summary"><p>It was dark, but now it is light. I was born a small human and am growing into a slightly bigger human.</p><p>No, for real.</p></div>
           <ul class="highlights">
-            <li>born</li>
-            <li>cried</li>
+            <li>Born</li>
+            <li>Grew up</li>
+            <li>Grown up</li>
           </ul>
         </section>
       </section>
       <section id="skills" class="skills">
         <div class="item">
           <h2>Skills</h2>
-          <div class="name">Web Development</div>
+          <div class="name">Engineering</div>
           <div class="keywords">
+            JavaScript,
             HTML,
-            CSS,
-            JavaScript
+            CSS/PostCSS/Sass
+          </div>
+        </div>
+        <div class="item">
+          <div class="name">Human</div>
+          <div class="keywords">
+            Breathing,
+            Eating,
+            Sleeping
           </div>
         </div>
       </section>
@@ -395,11 +428,13 @@ section.volunteering .item header, section.projects .item header, section.educat
         <div class="item">
           <h2>Volunteering</h2>
           <header>
-              <h3 class="name">Organization</h3>
+            <h3 class="name">Organization</h3>
+            <div class="subhead">
+              <span class="position">Volunteer</span>
+              <small class="startDate">Jan 2012
+              - Jan 2013</small>
+            </div>
           </header>
-          <span class="position">Volunteer</span>
-          <span class="startDate">Dec 2011</span>
-          <span class="endDate"> - Dec 2012</span>
           <div class="summary">Description…</div>
           <ul class="highlights">
             <li>Awarded &#x27;Volunteer of the Month&#x27;</li>
@@ -411,15 +446,18 @@ section.volunteering .item header, section.projects .item header, section.educat
           <h2>Projects</h2>
           <header>
             <h3 class="name">Project</h3>
-            <small class="subhead">Dec 2018
-             - Dec 2020</small>
+            <small class="subhead">Jan 2019
+             - Jan 2021</small>
           </header>
+          <strong>Highlights</strong>
           <ul class="highlights">
             <li>Won award at AIHacks 2016</li>
           </ul>
+          <strong>Keywords</strong>
           <ul class="keywords">
             <li>HTML</li>
           </ul>
+            <strong>Roles</strong>
           <ul class="roles">
             <li>Team Lead</li>
           </ul>
@@ -434,8 +472,8 @@ section.volunteering .item header, section.projects .item header, section.educat
               <h3 class="name">University</h3>
           </header>
           <small class="dates">
-            <span class="startDate">Dec 2010</span>
-            <span class="endDate"> - Dec 2012</span>
+            <span class="startDate">Jan 2011</span>
+            <span class="endDate"> - Jan 2013</span>
           </small>
           <div class="qualification">
             <span class="studyType">Bachelor</span>
@@ -448,7 +486,7 @@ section.volunteering .item header, section.projects .item header, section.educat
           <h2>Awards</h2>
           <header>
             <div class="title">Award</div>
-            <small class="date">Oct 2014</small>
+            <small class="date">Nov 2014</small>
           </header>
           <div class="awarder">Company</div>
           <div class="summary"><span>There is no spoon.</span></div>
@@ -461,8 +499,8 @@ section.volunteering .item header, section.projects .item header, section.educat
           <div class="subhead">
       
           <div class="publisher">Company</div>
-          <div class="releaseDate">Sep 2014</div>
-          <div class="website"><a href="https://publication.com">Link</a></div>
+          <div class="releaseDate">Oct 2014</div>
+          <div class="website"><a href="https://publication.com" target="external">Link</a></div>
           </div>
           <div class="summary">Description…</div>
         </div>

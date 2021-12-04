@@ -4,7 +4,7 @@
   },
   "basics": {
     "name": "John Doe",
-    "label": "Programmer",
+    "label": "Director of Engineering",
     "image": "",
     "email": "john@gmail.com",
     "phone": "(912) 555-4321",
@@ -33,19 +33,19 @@
   "work": [
     {
       "name": "Robot Company",
-      "position": "Robitic Landlord",
+      "position": "Robotic Landlord",
       "url": "https://example.com",
-      "startDate": "2012-01-01",
-      "endDate": "2021-01-01",
+      "startDate": "2012-1-1",
+      "endDate": "2021-3-1",
       "summary": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque necessitatibus quo placeat architecto iste totam vitae amet aliquam vero aperiam, omnis tempora libero nobis in incidunt fugit deleniti saepe fugiat.\nLorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque necessitatibus quo placeat architecto iste totam vitae amet aliquam vero aperiam, omnis tempora libero nobis in incidunt fugit deleniti saepe fugiat.",
-      "highlights": ["Started the company", "Beep Boop"]
+      "highlights": ["Started the company", "Experimental Surgery", "Beep Boop"]
     },
     {
       "name": "Company",
       "position": "Software Engineer",
       "url": "https://company.com",
-      "startDate": "2014-01-01",
-      "endDate": "2014-01-01",
+      "startDate": "2014-1-1",
+      "endDate": "2014-1-1",
       "summary": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque necessitatibus quo placeat architecto iste totam vitae amet aliquam vero aperiam, omnis tempora libero nobis in incidunt fugit deleniti saepe fugiat.",
       "highlights": []
     },
@@ -53,10 +53,10 @@
       "name": "Tiny Child",
       "position": "Human",
       "url": "",
-      "startDate": "1901-01-01",
-      "endDate": "2021-01-01",
-      "summary": "It's my life!",
-      "highlights": ["born", "cried"]
+      "startDate": "1977-2-27",
+      "endDate": "",
+      "summary": "It was dark, but now it is light. I was born a small human and am growing into a slightly bigger human.\nNo, for real.",
+      "highlights": ["Born", "Grew up", "Grown up"]
     }
   ],
   "volunteer": [
@@ -64,8 +64,8 @@
       "organization": "Organization",
       "position": "Volunteer",
       "url": "https://organization.com/",
-      "startDate": "2012-01-01",
-      "endDate": "2013-01-01",
+      "startDate": "2012-1-1",
+      "endDate": "2013-1-1",
       "summary": "Description…",
       "highlights": ["Awarded 'Volunteer of the Month'"]
     }
@@ -76,8 +76,8 @@
       "url": "https://institution.com/",
       "area": "Software Development",
       "studyType": "Bachelor",
-      "startDate": "2011-01-01",
-      "endDate": "2013-01-01",
+      "startDate": "2011-1-1",
+      "endDate": "2013-1-1",
       "score": "4.0",
       "courses": ["DB1101 - Basic SQL"]
     }
@@ -85,7 +85,7 @@
   "awards": [
     {
       "title": "Award",
-      "date": "2014-11-01",
+      "date": "2014-11-1",
       "awarder": "Company",
       "summary": "There is no spoon."
     }
@@ -94,16 +94,21 @@
     {
       "name": "Publication",
       "publisher": "Company",
-      "releaseDate": "2014-10-01",
+      "releaseDate": "2014-10-1",
       "url": "https://publication.com",
       "summary": "Description…"
     }
   ],
   "skills": [
     {
-      "name": "Web Development",
+      "name": "Engineering",
       "level": "Master",
-      "keywords": ["HTML", "CSS", "JavaScript"]
+      "keywords": ["JavaScript", "HTML", "CSS/PostCSS/Sass"]
+    },
+    {
+      "name": "Human",
+      "level": "Master",
+      "keywords": ["Breathing", "Eating", "Sleeping"]
     }
   ],
   "languages": [
@@ -138,8 +143,8 @@
       "description": "Description…",
       "highlights": ["Won award at AIHacks 2016"],
       "keywords": ["HTML"],
-      "startDate": "2019-01-01",
-      "endDate": "2021-01-01",
+      "startDate": "2019-1-1",
+      "endDate": "2021-1-1",
       "url": "https://project.com/",
       "roles": ["Team Lead"],
       "entity": "Entity",

@@ -1,5 +1,10 @@
 // Mixins/Various
-$full: '(min-width: 767px)'
+$small: '(max-width: 566px)'
+$full: '(min-width: 567px)'
+
+=smallsize
+  @media screen and #{$small}
+    @content
  
 =fullsize
   @media screen and #{$full}
@@ -7,34 +12,40 @@ $full: '(min-width: 767px)'
   
 // Begin Stylesheet
 \:root
-  --blue:#2C85B1
+  // Colors
   --accent:#BC1B39
-  --white:#FFFFFF
+  --anchor-color: #2C85B1
+  --blue:#2C85B1
+  --copy-color-light: #666666
+  --copy-color: #242424
   --grey:#999999
   --light-grey:#ededed
-  --copy-color: #242424
-  --copy-color-light: #666666
-  --spacing: .5em
-  --spacing-double: 1em
-  --anchor-color: #2C85B1
+  --white:#FFFFFF
+
+  // Sizes
   --base-font-size: 12pt
+  --spacing-double: 1rem
+  --spacing-small: .1rem
+  --spacing: .5rem
 
   +fullsize
-    --spacing: .75em
-    --spacing-double: 1.5em 
+    --spacing-double: 1.5rem 
+    --spacing-small: .25rem
+    --spacing: .75rem
 
   @media print
-    --copy-color: #000000
-    --copy-color-light: #000000
     --anchor-color: #000000
     --base-font-size: 9pt
+    --copy-color-light: #000000
+    --copy-color: #000000
 
 body
   color: var(--copy-color)
+  display: flex
   font: var(--base-font-size) 'Open Sans', Helvetica, Arial, sans-serif
-  line-height: 1.4
-  margin-bottom: 100px
-  margin: 0 0
+  justify-content: center
+  line-height: 1.25
+  -webkit-print-color-adjust: exact
 
 em
   color: var(--grey)
@@ -44,18 +55,17 @@ p
 
 a
   color: var(--anchor-color)
-  text-decoration: none
   font-weight: 400
+  text-decoration: none
 
 ul
   margin-bottom: 0
 
 section
-  margin: 1em 0 2em
+  margin: var(--spacing) 0 var(--spacing-double)
 
 blockquote
-  margin: 0
-  margin-bottom: 1em
+  margin-bottom: 0 0 var(--spacing)
 
 #resume
   background: var(--white)
@@ -67,13 +77,13 @@ section.heading
   header
     h1
       font-size: 180%
-      margin: 0
       font-weight: 300
+      margin: 0
 
     h2
       font-size: 140%
-      margin: 0
       font-weight: 400
+      margin: 0
 
       &::after
         display: none
@@ -84,12 +94,12 @@ section.heading
       padding-bottom: var(--spacing)
 
       +fullsize
-        justify-content: space-between
         flex-direction: row
+        justify-content: space-between
 
     address
-      font-style: normal
       font-size: 90%
+      font-style: normal
       padding-bottom: var(--spacing)
 
   .profiles
@@ -113,10 +123,10 @@ section.heading
 
 
     strong
-      margin: 0 .5em 0 0
+      margin: 0 var(--spacing-small) 0 0
 
     span
-      margin: 0 1.5em 0 0
+      margin: 0 var(--spacing-double) 0 0
 
 // Experience items (Work)
 section.experience
@@ -134,29 +144,31 @@ section.experience
       h3
         color: var(--copy-color)
         display: inline-block
-        text-decoration: none
         font-weight: 400
+        text-decoration: none
 
       .subhead
-        align-items: baseline
-        display: flex
-        justify-content: space-between
+        @extend %flexible-heading
+        flex-direction: column
+
+        +smallsize
+          margin-bottom: var(--spacing-double)
 
     .summary
       p
-        margin-top: .5em
+        margin-top: var(--spacing)
 
         &:first-child
-          margin-top: .25em
+          margin-top: var(--spacing-small)
 
         &:last-child
-          margin-bottom: .25em
+          margin-bottom: var(--spacing-small)
 
     .position
       color: var(--copy-color-light)
       font-size: 100%
       font-weight: 500
-      margin: 0.2em 1em 0.2em 0
+      margin: var(--spacing-small) 0
 
     .startDate,
     .endDate
@@ -168,21 +180,27 @@ section.experience
 // Skills
 section.skills
   .item
-    margin: 0.5em 0
-    padding: 0 0 0.5em
-    font-size: 90%
+    margin: 0
+    padding: 0 0 var(--spacing)
+
+    &:first-child
+      margin-top: var(--spacing)
+
+    &:last-child
+      margin-bottom: var(--spacing)
 
     .name
-      font-weight: 600
       display: inline-block
+      font-size: 90%
+      font-weight: 600
+      margin: 0 var(--spacing) 0 0
       text-transform: uppercase
-      margin: 0 1em 0 0
-      width: 23%
       vertical-align: top
+      white-space: nowrap
 
     .keywords
       display: inline-block
-      width: 70%
+      font-size: 90%
       vertical-align: top
 
 // Volunteering
@@ -190,8 +208,13 @@ section.volunteering
   .item
     @extend %avoid-break
 
+    .position
+      font-weight: 600
+
     header
-      @extend %flexible-heading
+      .subhead
+        @extend %flexible-heading
+        margin-top: var(--spacing)
 
   .highlights
     @extend %unordered-list
@@ -201,10 +224,17 @@ section.projects
   .item
     @extend %avoid-break
 
+    strong
+      color: var(--copy-color-light)
+      font-weight: 600
+      display: inline-block
+      padding-top: var(--spacing)
+
   .highlights,
   .keywords,
   .roles
     @extend %unordered-list
+    margin: var(--spacing-small) 0 var(--spacing)
 
   .item header
     @extend %flexible-heading
@@ -222,6 +252,9 @@ section.awards
   .item
     @extend %avoid-break
 
+    .title
+      font-weight: 600
+
     header
       @extend %flexible-heading
 
@@ -229,6 +262,9 @@ section.awards
 section.publications
   .item
     @extend %avoid-break
+
+    .name
+      font-weight: 600
 
     .website
       @extend %hide-on-print
@@ -277,19 +313,20 @@ section
     color: var(--accent)
     font-size: 135%
     font-weight: 400
-    margin: 0 0 1em
-    text-transform: uppercase
+    margin: 0 0 var(--spacing-double)
     position: relative
+    text-transform: uppercase
 
     &::after
-      content: ''
-      width: var(--spacing-double)
-      height: .13em
       background: var(--accent)
-      display: inline-block
-      position: absolute
-      left: 0
       bottom: -10px
+      content: ' '
+      display: inline-block
+      // font-size: 
+      height: 3px
+      left: 0
+      position: absolute
+      width: 2.5rem
 
   header
     h3

@@ -1,37 +1,40 @@
 :root {
-  --blue:#2C85B1;
   --accent:#BC1B39;
-  --white:#FFFFFF;
+  --anchor-color: #2C85B1;
+  --blue:#2C85B1;
+  --copy-color-light: #666666;
+  --copy-color: #242424;
   --grey:#999999;
   --light-grey:#ededed;
-  --copy-color: #242424;
-  --copy-color-light: #666666;
-  --spacing: .5em;
-  --spacing-double: 1em;
-  --anchor-color: #2C85B1;
+  --white:#FFFFFF;
   --base-font-size: 12pt;
+  --spacing-double: 1rem;
+  --spacing-small: .1rem;
+  --spacing: .5rem;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 567px) {
   :root {
-    --spacing: .75em;
-    --spacing-double: 1.5em;
+    --spacing-double: 1.5rem;
+    --spacing-small: .25rem;
+    --spacing: .75rem;
   }
 }
 @media print {
   :root {
-    --copy-color: #000000;
-    --copy-color-light: #000000;
     --anchor-color: #000000;
     --base-font-size: 9pt;
+    --copy-color-light: #000000;
+    --copy-color: #000000;
   }
 }
 
 body {
   color: var(--copy-color);
+  display: flex;
   font: var(--base-font-size) "Open Sans", Helvetica, Arial, sans-serif;
-  line-height: 1.4;
-  margin-bottom: 100px;
-  margin: 0 0;
+  justify-content: center;
+  line-height: 1.25;
+  -webkit-print-color-adjust: exact;
 }
 
 em {
@@ -44,8 +47,8 @@ p {
 
 a {
   color: var(--anchor-color);
-  text-decoration: none;
   font-weight: 400;
+  text-decoration: none;
 }
 
 ul {
@@ -53,12 +56,11 @@ ul {
 }
 
 section {
-  margin: 1em 0 2em;
+  margin: var(--spacing) 0 var(--spacing-double);
 }
 
 blockquote {
-  margin: 0;
-  margin-bottom: 1em;
+  margin-bottom: 0 0 var(--spacing);
 }
 
 #resume {
@@ -69,13 +71,13 @@ blockquote {
 
 section.heading header h1 {
   font-size: 180%;
-  margin: 0;
   font-weight: 300;
+  margin: 0;
 }
 section.heading header h2 {
   font-size: 140%;
-  margin: 0;
   font-weight: 400;
+  margin: 0;
 }
 section.heading header h2::after {
   display: none;
@@ -85,15 +87,15 @@ section.heading header .contact {
   flex-direction: column;
   padding-bottom: var(--spacing);
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 567px) {
   section.heading header .contact {
-    justify-content: space-between;
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 section.heading header address {
-  font-style: normal;
   font-size: 90%;
+  font-style: normal;
   padding-bottom: var(--spacing);
 }
 section.heading .profiles {
@@ -101,7 +103,7 @@ section.heading .profiles {
   flex-direction: column;
   padding-bottom: var(--spacing);
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 567px) {
   section.heading .profiles {
     flex-direction: row;
     justify-content: start;
@@ -116,10 +118,10 @@ section.heading .profiles .profile.print {
   }
 }
 section.heading .profiles strong {
-  margin: 0 0.5em 0 0;
+  margin: 0 var(--spacing-small) 0 0;
 }
 section.heading .profiles span {
-  margin: 0 1.5em 0 0;
+  margin: 0 var(--spacing-double) 0 0;
 }
 
 section.experience .item {
@@ -134,52 +136,84 @@ section.experience .item header a,
 section.experience .item header h3 {
   color: var(--copy-color);
   display: inline-block;
-  text-decoration: none;
   font-weight: 400;
+  text-decoration: none;
 }
 section.experience .item header .subhead {
-  align-items: baseline;
-  display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+@media screen and (max-width: 566px) {
+  section.experience .item header .subhead {
+    margin-bottom: var(--spacing-double);
+  }
 }
 section.experience .item .summary p {
-  margin-top: 0.5em;
+  margin-top: var(--spacing);
 }
 section.experience .item .summary p:first-child {
-  margin-top: 0.25em;
+  margin-top: var(--spacing-small);
 }
 section.experience .item .summary p:last-child {
-  margin-bottom: 0.25em;
+  margin-bottom: var(--spacing-small);
 }
 section.experience .item .position {
   color: var(--copy-color-light);
   font-size: 100%;
   font-weight: 500;
-  margin: 0.2em 1em 0.2em 0;
+  margin: var(--spacing-small) 0;
 }
 section.experience .item .startDate,
 section.experience .item .endDate {
   color: var(--grey);
 }
 section.skills .item {
-  margin: 0.5em 0;
-  padding: 0 0 0.5em;
-  font-size: 90%;
+  margin: 0;
+  padding: 0 0 var(--spacing);
+}
+section.skills .item:first-child {
+  margin-top: var(--spacing);
+}
+section.skills .item:last-child {
+  margin-bottom: var(--spacing);
 }
 section.skills .item .name {
-  font-weight: 600;
   display: inline-block;
+  font-size: 90%;
+  font-weight: 600;
+  margin: 0 var(--spacing) 0 0;
   text-transform: uppercase;
-  margin: 0 1em 0 0;
-  width: 23%;
   vertical-align: top;
+  white-space: nowrap;
 }
 section.skills .item .keywords {
   display: inline-block;
-  width: 70%;
+  font-size: 90%;
   vertical-align: top;
 }
 
+section.volunteering .item .position {
+  font-weight: 600;
+}
+section.volunteering .item header .subhead {
+  margin-top: var(--spacing);
+}
+section.projects .item strong {
+  color: var(--copy-color-light);
+  font-weight: 600;
+  display: inline-block;
+  padding-top: var(--spacing);
+}
+section.projects .highlights,
+section.projects .keywords,
+section.projects .roles {
+  margin: var(--spacing-small) 0 var(--spacing);
+}
+section.awards .item .title {
+  font-weight: 600;
+}
+section.publications .item .name {
+  font-weight: 600;
+}
 section.languages .language-item {
   display: flex;
   justify-content: start;
@@ -210,19 +244,19 @@ section h2 {
   color: var(--accent);
   font-size: 135%;
   font-weight: 400;
-  margin: 0 0 1em;
-  text-transform: uppercase;
+  margin: 0 0 var(--spacing-double);
   position: relative;
+  text-transform: uppercase;
 }
 section h2::after {
-  content: "";
-  width: var(--spacing-double);
-  height: 0.13em;
   background: var(--accent);
-  display: inline-block;
-  position: absolute;
-  left: 0;
   bottom: -10px;
+  content: " ";
+  display: inline-block;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 2.5rem;
 }
 section header h3 {
   margin: 0;
@@ -247,13 +281,13 @@ section.experience .item, section.volunteering .item, section.projects .item, se
   }
 }
 
-section.volunteering .item header, section.projects .item header, section.education .item header, section.awards .item header, section.publications .item .subhead {
+section.experience .item header .subhead, section.volunteering .item header .subhead, section.projects .item header, section.education .item header, section.awards .item header, section.publications .item .subhead {
   align-items: baseline;
   display: flex;
   justify-content: space-between;
 }
-@media screen and (min-width: 767px) {
-  section.volunteering .item header, section.projects .item header, section.education .item header, section.awards .item header, section.publications .item .subhead {
+@media screen and (min-width: 567px) {
+  section.experience .item header .subhead, section.volunteering .item header .subhead, section.projects .item header, section.education .item header, section.awards .item header, section.publications .item .subhead {
     flex-direction: row;
   }
 }

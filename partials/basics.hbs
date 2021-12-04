@@ -18,7 +18,7 @@
       <span class="contact-detail">{{phone}}</span>
       {{/if}}
       {{#if url}}
-      <span class="contact-detail"><a href="{{url}}">{{url}}</a></span>
+      <span class="contact-detail"><a href="{{url}}" target="external">{{url}}</a></span>
       {{/if}}
       {{#if location}}
     </div>
@@ -52,7 +52,7 @@
       {{#if username}}
       <span class="username">
         {{#if url}}
-      <a href="{{url}}">@{{username}}</a>
+        <a href="{{url}}" target="external">@{{username}}</a>
         {{else}}
         {{username}}
         {{/if}}
@@ -60,9 +60,6 @@
       {{/if}}
     </div>
     <div class="profile print">
-      {{#if network}}
-      <strong class="network">{{network}}</strong>
-      {{/if}}
       {{#if username}}
       <span class="username">
         {{#if url}}

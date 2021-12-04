@@ -22,6 +22,7 @@
     <div class="summary">{{paragraphSplit summary}}</div>
     {{/if}}
     {{#if highlights.length}}
+    <strong>Highlights</strong>
     <ul class="highlights">
       {{#each highlights}}
       <li>{{.}}</li>
@@ -29,6 +30,7 @@
     </ul>
     {{/if}}
     {{#if keywords.length}}
+    <strong>Keywords</strong>
     <ul class="keywords">
       {{#each keywords}}
       <li>{{.}}</li>
@@ -36,6 +38,7 @@
     </ul>
     {{/if}}
     {{#if roles.length}}
+      <strong>Roles</strong>
     <ul class="roles">
       {{#each roles}}
       <li>{{.}}</li>

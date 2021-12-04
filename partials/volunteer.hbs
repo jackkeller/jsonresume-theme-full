@@ -7,20 +7,22 @@
     {{/if}}
     <header>
       {{#if organization}}
-        <h3 class="name">{{organization}}</h3>
+      <h3 class="name">{{organization}}</h3>
       {{/if}}
+      <div class="subhead">
+        {{#if position}}
+        <span class="position">{{position}}</span>
+        {{/if}}
+        {{#if startDate}}
+        <small class="startDate">{{date startDate}}
+        {{/if}}
+        {{#if endDate}}
+        - {{date endDate}}</small>
+        {{else}}
+        - Present</small>
+        {{/if}}
+      </div>
     </header>
-    {{#if position}}
-    <span class="position">{{position}}</span>
-    {{/if}}
-    {{#if startDate}}
-    <span class="startDate">{{date startDate}}</span>
-    {{/if}}
-    {{#if endDate}}
-    <span class="endDate"> - {{date endDate}}</span>
-    {{else}}
-    <span class="endDate"> - Present</span>
-    {{/if}}
     {{#if summary}}
     <div class="summary">{{summary}}</div>
     {{/if}}

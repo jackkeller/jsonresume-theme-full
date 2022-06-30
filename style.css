@@ -290,7 +290,7 @@ section.projects .roles, section.education .item .courses {
   padding-left: var(--spacing-double);
 }
 
-section.experience .item, section.volunteering .item, section.projects .item, section.education .item, section.awards .item, section.publications .item, section.interests .item, section.references .item {
+section.experience .item, section.volunteering .item, section.projects .item, section.education .item, section.certificates .item, section.awards .item, section.publications .item, section.interests .item, section.references .item {
   page-break-inside: avoid;
 }
 
@@ -300,13 +300,13 @@ section.experience .item, section.volunteering .item, section.projects .item, se
   }
 }
 
-section.experience .item header .subhead, section.volunteering .item header .subhead, section.projects .item header, section.education .item header, section.awards .item header, section.publications .item .subhead {
+section.experience .item header .subhead, section.volunteering .item header .subhead, section.projects .item header, section.education .item header, section.certificates .item header, section.awards .item header, section.publications .item .subhead {
   align-items: baseline;
   display: flex;
   justify-content: space-between;
 }
 @media (min-width: 567px) {
-  section.experience .item header .subhead, section.volunteering .item header .subhead, section.projects .item header, section.education .item header, section.awards .item header, section.publications .item .subhead {
+  section.experience .item header .subhead, section.volunteering .item header .subhead, section.projects .item header, section.education .item header, section.certificates .item header, section.awards .item header, section.publications .item .subhead {
     flex-direction: row;
   }
 }

@@ -150,5 +150,15 @@
       "entity": "Entity",
       "type": "application"
     }
-  ]
+  ],
+  "certificates":[
+    {
+      "name": "Professional Forklift Certification",
+      "issuer": "Forklift Certifying body",
+      "startDate": "1500-01-16",
+      "endDate": "2077-06-20",
+      "code": "ASDF420",
+      "url": "https://www.sample_url.com/ASDF420"
+    }
+  ],
 }

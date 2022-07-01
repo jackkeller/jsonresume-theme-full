@@ -15,13 +15,17 @@
       {{#if position}}
       <span class="position">{{position}}</span>
       {{/if}}
-      {{#if startDate}}
-      <small class="dates">{{date startDate}}
-      {{/if}}
-      {{#if endDate}}
-       - {{date endDate}}</small>
+      {{#if noDate}}
+        <small>N/A</small>
       {{else}}
-       - Present</small>
+        {{#if startDate}}
+            <small class="dates">{{date startDate}}
+        {{/if}}
+        {{#if endDate}}
+            - {{date endDate}}</small>
+        {{else}}
+        - Present</small>
+        {{/if}}
       {{/if}}
       </div>
     </header>

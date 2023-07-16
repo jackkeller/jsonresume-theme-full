@@ -6,7 +6,7 @@ function render(resume) {
 	var css = fs.readFileSync(__dirname + "/style.css", "utf-8");
   var template = fs.readFileSync(__dirname + "/resume.hbs", "utf-8");
 	var partialsDir = path.join(__dirname, 'partials');
-  
+
   var filenames = fs.readdirSync(partialsDir);
   filenames.forEach(function (filename) {
     var matches = /^([^.]+).hbs$/.exec(filename);
@@ -16,11 +16,11 @@ function render(resume) {
 	  var name = matches[1];
 	  var filepath = path.join(partialsDir, filename)
 	  var template = fs.readFileSync(filepath, 'utf8');
-    
+
 	  Handlebars.registerPartial(name, template);
 	});
-  
-  
+
+
 	// Nicer dates
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 	Handlebars.registerHelper('date', function(date) {
@@ -43,6 +43,11 @@ Handlebars.registerHelper('paragraphSplit', function(plaintext) {
         }
     }
     return new Handlebars.SafeString(output);
+});
+
+Handlebars.registerHelper('ifNotEquals', function (a, b, options) {
+    if (a != b) { return options.fn(this); }
+    return options.inverse(this);
 });
 
 module.exports = {

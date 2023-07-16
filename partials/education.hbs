@@ -9,16 +9,19 @@
       {{#if institution}}
         <h3 class="name">{{institution}}</h3>
       {{/if}}
-      <small class="dates">
-        {{#if startDate}}
-        <span class="startDate">{{date startDate}}</span>
-        {{/if}}
-        {{#if endDate}}
-        <span class="endDate"> - {{date endDate}}</span>
-        {{else}}
-        <span class="endDate"> - Present</span>
-        {{/if}}
-      </small>
+      {{#if noDate}}
+      {{else}}
+        <small class="dates">
+          {{#if startDate}}
+          <span class="startDate">{{date startDate}}</span>
+          {{/if}}
+          {{#if endDate}}
+          <span class="endDate"> - {{date endDate}}</span>
+          {{else}}
+          <span class="endDate"> - Present</span>
+          {{/if}}
+        </small>
+    {{/if}}
     </header>
     <div class="qualification">
       {{#if studyType}}

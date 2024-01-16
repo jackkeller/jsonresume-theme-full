@@ -5,9 +5,14 @@
     {{#if @first}}
     <h2>Skills</h2>
     {{/if}}
-    {{#if name}}
-    <div class="name">{{name}}</div>
-    {{/if}}
+    <div class="subhead">
+      {{#if name}}
+      <span class="name">{{name}}</span>
+      {{/if}}
+      {{#if level}}
+      <span class="level">{{level}}</span>
+      {{/if}}
+    </div>
     {{#if keywords.length}}
     <div class="keywords">
       {{#each keywords}}

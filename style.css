@@ -183,6 +183,12 @@ section.skills .item .name {
   vertical-align: top;
   white-space: nowrap;
 }
+section.skills .item .level {
+  font-size: 90%;
+  font-style: italic;
+  white-space: nowrap;
+  vertical-align: top;
+}
 section.skills .item .keywords {
   display: inline-block;
   font-size: 90%;

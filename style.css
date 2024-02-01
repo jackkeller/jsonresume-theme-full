@@ -316,11 +316,3 @@ section.experience .item header .subhead, section.volunteering .item header .sub
     flex-direction: row;
   }
 }
-
-@media print {
-  body {
-    font-size: 11pt;
-    margin: 0;
-    padding: 0;
-  }
-}

@@ -296,7 +296,7 @@ section.projects .roles, section.education .item .courses {
   padding-left: var(--spacing-double);
 }
 
-section.experience .item, section.volunteering .item, section.projects .item, section.education .item, section.certificates .item, section.awards .item, section.publications .item, section.interests .item, section.references .item {
+section.experience .item, section.volunteering .item, section.projects .item, section.education .item, section.certificates .item, section.awards .item, section.publications .item, section.interests .item, section.references .item, section.skills .item {
   page-break-inside: avoid;
 }
 

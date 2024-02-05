@@ -106,6 +106,7 @@ section.heading .profiles {
 @media (min-width: 567px) {
   section.heading .profiles {
     flex-direction: row;
+    flex-flow: row wrap;
     justify-content: start;
   }
 }
